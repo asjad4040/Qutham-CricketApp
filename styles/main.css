@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.underline-from-center {
+    position: relative;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+.underline-from-center::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background-color: #ffffff; /* Change color as needed */
+    transition: all 0.2s ease;
+    transform: translateX(-50%);
+}
+.underline-from-center:hover::before {
+    width: 100%;
+}
+
+.sidebar {
+    width: 220px;
+}
+
+button.accordion {
+    cursor: pointer;
+    
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+.panel {
+    
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.panel p {
+    margin-top: 0;
+    
+}
+.myElement{
+    animation: blink 1s linear infinite;
+}
+@keyframes blink {
+    25%{
+        opacity: 0.5;
+    }
+    50%{
+        opacity: 0;
+    }
+    75%{
+        opacity: 0.5;
+    }
+}
